@@ -1,31 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="relative bg-white text-gray-800">
-      {/* Hero Section */}
-      <section className="relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
-        {/* Background Image */}
+    <div className="bg-white text-gray-800">
+      {/* HERO SECTION */}
+      <section className="relative w-full h-[85vh] md:h-[90vh] overflow-hidden">
         <Image
           src="/images/mountains.jpg"
-          alt="Mountain adventure backdrop"
+          alt="Adventure mountain landscape"
           fill
           priority
-          sizes="100vw"
           className="object-cover object-center"
+          sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-transparent" />
 
-        {/* Overlay gradient (for contrast) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent" />
-
-        {/* Hero Text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <p className="text-white/90 text-base sm:text-lg md:text-xl tracking-[0.15em] mb-4 uppercase">
+          <p className="text-white/90 text-base sm:text-lg md:text-xl tracking-wide mb-4 uppercase">
             dive deep into cultures, tread along untouched terrains
           </p>
-
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
-            <span className="bg-white/40 backdrop-blur-sm px-2 py-1 rounded text-white">
+            <span className="bg-white/40 backdrop-blur-sm px-3 py-1 rounded text-white">
               we are
             </span>{" "}
             <span className="text-orange-500 drop-shadow-md">Adventure</span>
@@ -33,90 +29,113 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-6 py-16 space-y-16">
-        {/* Section 1 */}
-        <section>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Adventure Awaits
-          </h2>
-          <p className="text-lg leading-relaxed text-gray-700">
-            Fly Fishing Mongolia — one of the world’s most spectacular
-            fly-fishing destinations. This country should be on every angler’s
-            bucket list. But be warned — if you visit once, you’ll want to come
-            back again and again.
-          </p>
-        </section>
+      {/* ADVENTURE AWAITS */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <h2 className="text-4xl md:text-5xl font-serif text-center mb-16">
+          Adventure Awaits
+        </h2>
 
-        {/* Section 2 */}
-        <section className="border border-gray-200 rounded-2xl p-8 shadow-sm bg-white/80">
-          <h3 className="text-2xl font-semibold mb-2 text-gray-900">
-            ONE OUTFITTER. TWO RIVERS. FOUR ADVENTURES.
-          </h3>
-          <p className="text-gray-700 leading-relaxed">
-            Mandala Adventures guides four unique trips on two special Mongolian
-            rivers. Most fishing is from drift boats with guests floating each
-            day between pre-established camps. The more adventurous “Headwaters
-            Expedition” uses camels to pack into a remote wilderness area. Every
-            adventure includes exceptional staff, camps, and gear.
-          </p>
-        </section>
-
-        {/* Section 3 */}
-        <section>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Everest Looms Above
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Trek to Everest Base Camp (17,389′) via the historic route taken by
-            Edmund Hillary and Tenzing Norgay in 1953. Pause in Sherpa
-            villages, teahouses, and Buddhist monasteries — culminating at Kala
-            Pattar (18,200′) for breathtaking views.
-          </p>
-          <ul className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-700">
-            <li>• Mt. Everest Views</li>
-            <li>• Sherpa Village Life</li>
-            <li>• Visit Monasteries</li>
-            <li>• Life in Kathmandu</li>
-          </ul>
-        </section>
-
-        {/* Section 4 */}
-        <section className="border-t border-gray-200 pt-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Book With Confidence
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 border border-gray-200 p-6 rounded-xl shadow-sm">
-              <h3 className="font-semibold text-xl text-gray-900 mb-2">
-                ONE: Partners
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Text */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                Fly Fishing Mongolia
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                We partner with the top providers in Asia — the same trusted
-                teams used by leading global outfitters.
+                Mongolia is one of the world’s most spectacular fly-fishing
+                destinations. This country should be on every angler’s bucket
+                list. But be warned — if you visit Mongolia once, you’ll want to
+                come back again and again.
               </p>
             </div>
-            <div className="bg-gray-50 border border-gray-200 p-6 rounded-xl shadow-sm">
-              <h3 className="font-semibold text-xl text-gray-900 mb-2">
-                TWO: Reputation
-              </h3>
+
+            <div>
+              <h4 className="text-xl md:text-2xl font-extrabold uppercase mb-2">
+                One Outfitter. Two Rivers. Four Adventures.
+              </h4>
               <p className="text-gray-700 leading-relaxed">
-                Over 75 % of our business comes from repeat or referral
-                travelers — a testament to lasting experiences.
-              </p>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 p-6 rounded-xl shadow-sm">
-              <h3 className="font-semibold text-xl text-gray-900 mb-2">
-                THREE: Easier Customization
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                We specialize in crafting your ideal trip. Most itineraries are
-                tailored, ensuring your journey is truly yours.
+                Mandala Adventures guides four unique trips on two special
+                Mongolian rivers. Most fishing is from drift boats with guests
+                floating each day between pre-established camps. The more
+                adventurous “Headwaters Expedition” uses camels to pack into a
+                remote wilderness area. All adventures include exceptional
+                staff, camps, and gear.
               </p>
             </div>
           </div>
-        </section>
-      </main>
+
+          {/* Right Image */}
+          <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-md">
+            <Image
+              src="/images/fishing-mongolia.jpg"
+              alt="Fly fishing in Mongolia"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* EVEREST LOOMS ABOVE */}
+      <section className="bg-gray-50 py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Everest Looms Above
+          </h2>
+          <p className="text-gray-700 leading-relaxed mb-8">
+            Trek to Everest Base Camp (17,389′) via the historic route taken by
+            Edmund Hillary and Tenzing Norgay in 1953. We’ll pause along the way
+            in Sherpa villages, teahouses, markets, and Buddhist monasteries.
+            The trek culminates at Kala Pattar (18,200′) for breathtaking views.
+          </p>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {[
+              "Mt. Everest Views",
+              "Sherpa Village Life",
+              "Visit Monasteries",
+              "Life in Kathmandu",
+            ].map((item) => (
+              <div
+                key={item}
+                className="bg-white border border-gray-200 rounded-lg p-4 text-center shadow-sm"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+
+          <Link
+            href="#"
+            className="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-orange-600 transition"
+          >
+            Learn More
+          </Link>
+        </div>
+      </section>
+
+      {/* PARTNER LOGOS */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="flex flex-wrap justify-center items-center gap-10">
+          {[
+            "/images/expeditions.png",
+            "/images/times-logo-new.png",
+            "/images/JourneysLogo_Yellow.png",
+          ].map((src, i) => (
+            <div key={i} className="relative h-[60px] w-auto">
+              <Image
+                src={src}
+                alt={`Partner ${i + 1}`}
+                width={200}
+                height={60}
+                className="object-contain h-[60px] w-auto"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
