@@ -19,15 +19,15 @@ export default function Header() {
           />
         </Link>
 
-        {/* Menu */}
+        {/* Navigation */}
         <nav className="flex space-x-8 text-sm font-medium text-gray-700">
-          <Link href="/trips" className="hover:text-emerald-600 transition">
+          <Link href="/trips" className="hover:text-emerald-600 transition-colors">
             Trips
           </Link>
-          <Link href="/destinations" className="hover:text-emerald-600 transition">
+          <Link href="/destinations" className="hover:text-emerald-600 transition-colors">
             Destinations
           </Link>
-          <Link href="/about" className="hover:text-emerald-600 transition">
+          <Link href="/about" className="hover:text-emerald-600 transition-colors">
             About
           </Link>
         </nav>
