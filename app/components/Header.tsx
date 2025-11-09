@@ -5,22 +5,22 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="border-b border-gray-200 bg-white">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
           <Image
             src="/images/mandala-logo.png"
             alt="Mandala Adventures Logo"
-            width={180}
-            height={50}
-            className="h-auto w-auto"
+            width={200}
+            height={60}
             priority
+            className="h-auto w-auto"
           />
         </Link>
 
         {/* Navigation */}
-        <nav className="flex space-x-8 text-sm font-medium text-gray-700">
+        <nav className="flex items-center space-x-8 text-gray-700 text-sm font-medium">
           <Link href="/trips" className="hover:text-emerald-600 transition-colors">
             Trips
           </Link>
