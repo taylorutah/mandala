@@ -6,28 +6,39 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
 import Header from "./components/Header";
-import Script from "next/script"; // ✅ Add this
+import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "NAPCO | North American Pump Company",
-    template: "%s | NAPCO",
+    default: "Mandala | Dive Deep Into Cultures",
+    template: "%s | Mandala",
   },
   description:
-    "NAPCO manufactures precision rotary gear pumps and factory-matched service kits for demanding industrial transfer applications.",
+    "Mandala explores culture, connection, and discovery — through storytelling, travel, and shared experience.",
   openGraph: {
-    title: "NAPCO Rotary Gear Pumps & Repair Kits",
+    title: "Mandala – Adventure. Culture. Connection.",
     description:
-      "Precision rotary gear pumps in 2″ and 3″ port sizes, stainless or ductile iron, self-priming and fully serviceable.",
+      "Dive deep into untouched terrains. Explore culture, travel, and discovery through immersive storytelling.",
     url: baseUrl,
-    siteName: "NAPCO",
+    siteName: "Mandala",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/mountains.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mandala Mountain Adventure",
+      },
+    ],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
@@ -42,46 +53,45 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        "text-black bg-white dark:text-white dark:bg-black scroll-smooth",
+        "text-white bg-black scroll-smooth antialiased",
         GeistSans.variable,
         GeistMono.variable
       )}
     >
       <head>
-        {/* ✅ Load model-viewer globally via Google CDN */}
+        {/* ✅ Load Google model-viewer globally (kept for any 3D components) */}
         <Script
-  id="model-viewer-cdn"
-  type="module"
-  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-  strategy="beforeInteractive"  // ✅ must be beforeInteractive
-/>
+          id="model-viewer-cdn"
+          type="module"
+          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+          strategy="beforeInteractive"
+        />
       </head>
 
-      <body className="antialiased selection:bg-red-600/20 selection:text-red-700">
+      <body className="selection:bg-emerald-400/30 selection:text-emerald-800">
+        {/* Header */}
         <Header />
 
-        <main className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
-          {children}
-        </main>
+        {/* Main content area */}
+        <main className="mx-auto max-w-6xl px-4 sm:px-6 py-10">{children}</main>
 
-        <footer className="border-t border-gray-200 dark:border-white/10 mt-16 py-10 text-center text-sm text-gray-600 dark:text-gray-400">
-          <p className="mb-1">
-            © {new Date().getFullYear()} NAPCO – North American Pump Company
-            L.L.C.
-          </p>
-          <p className="mb-3">8744 S Sandy Parkway, Unit E | Sandy, UT 84070</p>
+        {/* Footer */}
+        <footer className="border-t border-white/10 mt-16 py-10 text-center text-sm text-white/70">
+          <p className="mb-1">© {new Date().getFullYear()} Mandala</p>
+          <p className="mb-3">Exploring culture through story and place.</p>
           <p>
             <a
-              href="https://napcopumps.com"
+              href="https://mandala-beryl.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-400 transition"
+              className="text-emerald-400 hover:text-emerald-300 transition"
             >
-              www.napcopumps.com
+              mandala-beryl.vercel.app
             </a>
           </p>
         </footer>
 
+        {/* Analytics */}
         <Analytics />
         <SpeedInsights />
       </body>
