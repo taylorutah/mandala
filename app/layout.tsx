@@ -54,15 +54,13 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="antialiased selection:bg-emerald-200 selection:text-emerald-800">
+      <body className="antialiased selection:bg-emerald-200 selection:text-emerald-800 bg-white">
         <Header />
-
-        <main className="mx-auto max-w-6xl px-4 sm:px-6 py-10">{children}</main>
-
-        <footer className="border-t border-gray-200 mt-16 py-10 text-center text-sm text-gray-600">
-          <p className="mb-1">
-            © {new Date().getFullYear()} Mandala Adventures
-          </p>
+        <main className="mx-auto max-w-6xl px-4 sm:px-6 py-10 bg-white">
+          {children}
+        </main>
+        <footer className="border-t border-gray-200 bg-white mt-16 py-10 text-center text-sm text-gray-600">
+          <p className="mb-1">© {new Date().getFullYear()} Mandala Adventures</p>
           <p className="mb-3">Exploring culture through story and place.</p>
           <p>
             <a
@@ -75,7 +73,6 @@ export default function RootLayout({
             </a>
           </p>
         </footer>
-
         <Analytics />
         <SpeedInsights />
       </body>
