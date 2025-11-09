@@ -9,7 +9,7 @@ export default function HomePage() {
       {/* === HERO SECTION === */}
       <section className="relative w-full h-[90vh] md:h-[95vh] overflow-hidden">
         <Image
-          src="/images/nepal.jpeg"
+          src="/images/nepal.jpg"
           alt="Boudhanath Stupa prayer flags, Kathmandu Nepal"
           fill
           priority
