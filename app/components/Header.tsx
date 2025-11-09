@@ -1,74 +1,70 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export default function Header() {
-  const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Products", href: "/products" },
-    { name: "Identification", href: "/pump-identification" },
-    { name: "Engineering", href: "/engineering" },
-    { name: "Materials", href: "/materials" },
-    { name: "Industries", href: "/industries" },
-  ];
-
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 dark:bg-black/90 backdrop-blur-sm shadow-sm"
-          : "bg-white dark:bg-black"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-black/60 backdrop-blur-xl border-b border-white/10 shadow-lg"
+          : "bg-transparent border-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* ✅ NAPCO Logo */}
-        <Link href="/" className="flex items-center">
+      <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3 group">
           <Image
-            src="/images/napco-logo.png"
-            alt="NAPCO Logo"
-            width={140}
+            src="/images/mandala-logo.png"
+            alt="Mandala Adventures"
+            width={120}
             height={40}
+            className="h-10 w-auto transition-transform duration-500 group-hover:scale-105"
             priority
-            className="h-auto w-auto"
           />
         </Link>
 
-        {/* ✅ Navigation Links */}
-        <nav className="flex items-center space-x-8 text-sm font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`transition-colors hover:text-red-600 ${
-                pathname === link.href
-                  ? "text-red-600 dark:text-red-500"
-                  : "text-gray-800 dark:text-gray-200"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+        {/* Nav Links */}
+        <ul className="hidden md:flex items-center gap-10 text-white/80 text-sm font-medium uppercase tracking-widest">
+          <li>
+            <a href="#home" className="hover:text-emerald-400 transition-colors">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#explore" className="hover:text-emerald-400 transition-colors">
+              Explore
+            </a>
+          </li>
+          <li>
+            <a href="#stories" className="hover:text-emerald-400 transition-colors">
+              Stories
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="hover:text-emerald-400 transition-colors">
+              Contact
+            </a>
+          </li>
+        </ul>
 
-        {/* ✅ Request Quote Button */}
-        <Link
-          href="/contact"
-          className="ml-6 bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2 rounded-md font-medium transition"
-        >
-          Request Quote
-        </Link>
-      </div>
+        {/* Mobile Menu Icon */}
+        <div className="md:hidden flex flex-col items-end space-y-1 cursor-pointer group">
+          <span className="w-6 h-[2px] bg-white rounded-full group-hover:bg-emerald-400 transition-all" />
+          <span className="w-5 h-[2px] bg-white rounded-full group-hover:bg-emerald-400 transition-all" />
+          <span className="w-4 h-[2px] bg-white rounded-full group-hover:bg-emerald-400 transition-all" />
+        </div>
+      </nav>
     </header>
   );
 }
