@@ -5,6 +5,7 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "./components/Header";
+import Footer from "./components/Footer"; // ✅ Moved here (correct place)
 
 export const metadata: Metadata = {
   title: {
@@ -44,13 +45,17 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body className="antialiased selection:bg-emerald-200 selection:text-emerald-800 bg-white">
+      <body className="antialiased bg-white selection:bg-emerald-200 selection:text-emerald-800">
+        {/* --- Header --- */}
         <Header />
-        <main className="mx-auto max-w-6xl px-4 sm:px-6 py-10 bg-white">{children}</main>
-        <footer className="border-t border-gray-200 bg-white mt-16 py-10 text-center text-sm text-gray-600">
-          <p className="mb-1">© {new Date().getFullYear()} Mandala Adventures</p>
-          <p className="mb-3">Exploring culture through story and place.</p>
-        </footer>
+
+        {/* --- Main Content --- */}
+        <main className="max-w-none bg-white">{children}</main>
+
+        {/* --- Global Footer --- */}
+        <Footer />
+
+        {/* --- Analytics --- */}
         <Analytics />
         <SpeedInsights />
       </body>

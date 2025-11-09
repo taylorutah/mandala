@@ -122,7 +122,55 @@ export default function HomePage() {
           </Link>
         </div>
       </motion.section>
-
+{/* WHY MANDALA ADVENTURES */}
+<section className="bg-white py-24">
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
+      Why Mandala Adventures?
+    </h2>
+    <div className="grid md:grid-cols-3 gap-10">
+      {[
+        {
+          title: "Why Mandala Adventures?",
+          image: "/images/signpost.jpg",
+          text: "We create our unique trips with our partners in Asia and together tend to all details.",
+        },
+        {
+          title: "Travel Without Limits",
+          image: "/images/cliff-view.jpg",
+          text: "Explore our website, scrutinize our itineraries, contact our past guests — and then give us a call.",
+        },
+        {
+          title: "Adventure Awaits",
+          image: "/images/beach-boat.jpg",
+          text: "Asia is a destination full of exciting adventures — the countries are many and the activities endless.",
+        },
+      ].map((card, i) => (
+        <div
+          key={i}
+          className="bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition p-6 flex flex-col"
+        >
+          <h3 className="text-lg font-semibold mb-4">{card.title}</h3>
+          <div className="relative h-40 w-full mb-5">
+            <Image
+              src={card.image}
+              alt={card.title}
+              fill
+              className="object-cover rounded-lg"
+            />
+          </div>
+          <p className="text-gray-600 flex-grow">{card.text}</p>
+          <a
+            href="#"
+            className="mt-6 inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition"
+          >
+            Learn More →
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
       {/* PARTNER LOGOS */}
       <motion.section
         initial={{ opacity: 0 }}
