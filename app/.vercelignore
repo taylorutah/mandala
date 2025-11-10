@@ -1,0 +1,29 @@
+# Ignore build artifacts and local-only files
+.next/
+node_modules/
+.env
+.env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# Ignore editor/IDE files
+.vscode/
+.idea/
+*.swp
+
+# Ignore OS junk
+Thumbs.db
+Desktop.ini
+
+# Ignore Git and cache
+.git/
+.gitignore
+.vercel/
+
+# Ignore source maps (optional for smaller deploys)
+*.map
+
+# Ignore local images not in /public
+images/
