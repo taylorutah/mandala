@@ -67,7 +67,7 @@ a.button:hover {
    SECTION STRUCTURE
 -------------------------------------------------------------- */
 section {
-  @apply py-16 md:py-24 transition-all duration-700 ease-in-out;
+  @apply py-16 md:py-20 transition-all duration-700 ease-in-out;
 }
 
 section:nth-of-type(even) {
@@ -77,13 +77,19 @@ section:nth-of-type(even) {
 /* --------------------------------------------------------------
    IMAGES
 -------------------------------------------------------------- */
+/* General images */
 img {
   @apply rounded-lg shadow-sm;
   object-fit: cover;
 }
 
-figure {
-  @apply my-6;
+/* Transparent PNG fix for logos/partner-images */
+.logo-image,
+.partner-logo-image {
+  display: block;
+  background-color: #ffffff;
+  transform: translateZ(0);
+  image-rendering: auto;
 }
 
 /* --------------------------------------------------------------
@@ -153,7 +159,7 @@ nav a {
    FOOTER
 -------------------------------------------------------------- */
 footer {
-  @apply border-t border-gray-200 mt-20 py-10 text-center text-sm text-gray-600;
+  @apply border-t border-gray-200 mt-20 py-10 text-center text-sm text-gray-600 bg-white;
 }
 
 footer p {
