@@ -86,10 +86,8 @@ img {
 /* Transparent PNG fix for logos/partner-images */
 .logo-image,
 .partner-logo-image {
-  display: block;
-  background-color: #ffffff;
-  transform: translateZ(0);
-  image-rendering: auto;
+  color: #ffffff !important;
+ line-height: 0 !important;
 }
 
 /* --------------------------------------------------------------

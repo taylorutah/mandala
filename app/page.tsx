@@ -174,56 +174,50 @@ export default function HomePage() {
       </section>
 
       {/* === PARTNER LOGOS (fixed + refined) === */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="w-full bg-white border-t border-gray-100 py-16"
+<motion.section
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="w-full bg-white border-t border-gray-100 py-16"
+>
+  <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap justify-center items-center gap-x-20 gap-y-12">
+    {[
+      {
+        src: "/images/expeditions.png",
+        alt: "National Geographic Expeditions",
+        width: 208,
+        height: 64,
+      },
+      {
+        src: "/images/times-logo-new.png",
+        alt: "The New York Times Journeys",
+        width: 208,
+        height: 64,
+      },
+      {
+        src: "/images/JourneysLogo_Yellow-2.png",
+        alt: "Smithsonian Journeys",
+        width: 208,
+        height: 64,
+      },
+    ].map((logo, i) => (
+      <div
+        key={i}
+        className="flex justify-center items-center min-w-[200px] max-w-[208px] p-3 partner-logo-image"
+        style={{ backgroundColor: "#ffffff", color: "#ffffff" }}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap justify-center items-center gap-x-20 gap-y-12">
-          {[
-            {
-              src: "/images/expeditions.png",
-              alt: "National Geographic Expeditions",
-              width: 260,
-              height: 80,
-            },
-            {
-              src: "/images/times-logo-new.png",
-              alt: "The New York Times Journeys",
-              width: 260,
-              height: 80,
-            },
-            {
-              src: "/images/JourneysLogo_Yellow-2.png",
-              alt: "Smithsonian Journeys",
-              width: 260,
-              height: 80,
-            },
-          ].map((logo, i) => (
-            <div
-              key={i}
-              className="flex justify-center items-center min-w-[200px] max-w-[260px] p-3"
-              style={{ backgroundColor: "#ffffff" }}
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                className="object-contain block select-none"
-                style={{
-                  backgroundColor: "#ffffff",
-                  display: "block",
-                  transform: "translateZ(0)",
-                  imageRendering: "auto",
-                }}
-              />
-            </div>
-          ))}
-        </div>
-      </motion.section>
+        <Image
+          src={logo.src}
+          alt={logo.alt}
+          width={logo.width}
+          height={logo.height}
+          className="object-contain select-none"
+        />
+      </div>
+    ))}
+  </div>
+</motion.section>
     </div>
   );
 }
