@@ -86,8 +86,9 @@ img {
 /* Transparent PNG fix for logos/partner-images */
 .logo-image,
 .partner-logo-image {
+  line-height: 0 !important;
   color: #ffffff !important;
- line-height: 0 !important;
+  filter: brightness(1) contrast(1) !important; /* Forces Safari to re-rasterize */
 }
 
 /* --------------------------------------------------------------
