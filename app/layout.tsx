@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "./components/Header";
-import Footer from "./components/Footer"; // ✅ Moved here (correct place)
+import Footer from "./components/footer"; // ✅ Moved here (correct place)
 
 export const metadata: Metadata = {
   title: {
