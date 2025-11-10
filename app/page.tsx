@@ -196,7 +196,7 @@ export default function HomePage() {
               height: 80,
             },
             {
-              src: "/images/JourneysLogo_Yellow.png",
+              src: "/images/JourneysLogo_Yellow-2.png",
               alt: "Smithsonian Journeys",
               width: 260,
               height: 80,
