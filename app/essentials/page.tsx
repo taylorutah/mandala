@@ -82,10 +82,10 @@ export default function EssentialsPage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            <p className="text-amber-500 uppercase tracking-widest mb-2">What to Know</p>
-            <h1 className="text-4xl md:text-6xl font-bold">Traveler Essentials</h1>
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <div className="text-center max-w-4xl">
+            <p className="hero-tagline uppercase tracking-widest mb-3 font-semibold text-sm sm:text-base">What to Know</p>
+            <h1 className="hero-heading text-4xl sm:text-5xl md:text-6xl font-bold">Traveler Essentials</h1>
           </div>
         </div>
       </section>

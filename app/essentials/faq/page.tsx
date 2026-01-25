@@ -110,15 +110,15 @@ export default function FAQPage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white px-6">
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <div className="text-center max-w-4xl">
             <Link
               href="/essentials"
-              className="inline-block text-orange-400 uppercase tracking-[0.2em] text-sm font-semibold mb-4 hover:text-orange-300 transition-colors"
+              className="hero-tagline uppercase tracking-widest mb-3 hover:text-orange-300 font-semibold text-sm sm:text-base"
             >
               Essentials
             </Link>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <h1 className="hero-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-2">
               Frequently Asked Questions
             </h1>
           </div>
