@@ -17,8 +17,8 @@ export default function Footer() {
               outfitter of treks and overland journeys in Nepal, Tibet, Bhutan, India, and Southeast Asia.
             </p>
             <div className="text-gray-400">
-              <p className="mb-1">2492 Campus Dr</p>
-              <p className="mb-1">Salt Lake City, UT 84121, USA</p>
+              <p className="mb-1">8744 S Sandy Pkwy Ste E</p>
+              <p className="mb-1">Sandy, UT 84070-6436, USA</p>
               <p className="font-semibold text-white mt-3">
                 <a href="tel:+18018231551" className="hover:text-amber-500 transition-colors">
                   (801) 823-1551

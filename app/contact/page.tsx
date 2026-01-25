@@ -215,8 +215,8 @@ export default function ContactPage() {
               </div>
               <p className="text-gray-700">
                 Mandala Adventures<br />
-                2492 Campus Dr<br />
-                Salt Lake City, UT 84121<br />
+                8744 S Sandy Pkwy Ste E<br />
+                Sandy, UT 84070-6436<br />
                 USA
               </p>
             </div>

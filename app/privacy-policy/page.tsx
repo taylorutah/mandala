@@ -154,8 +154,8 @@ export default function PrivacyPolicyPage() {
           </p>
           <div className="bg-gray-50 rounded-lg p-6 mb-8">
             <p className="text-gray-700 mb-2"><strong>Mandala Adventures</strong></p>
-            <p className="text-gray-600 mb-1">2492 Campus Dr</p>
-            <p className="text-gray-600 mb-1">Salt Lake City, UT 84121, USA</p>
+            <p className="text-gray-600 mb-1">8744 S Sandy Pkwy Ste E</p>
+            <p className="text-gray-600 mb-1">Sandy, UT 84070-6436, USA</p>
             <p className="text-gray-600 mb-1">
               Email: <a href="mailto:info@mandalaadventures.com" className="text-orange-700 hover:underline">info@mandalaadventures.com</a>
             </p>
