@@ -57,8 +57,12 @@ h3 {
 
 p {
   @apply text-gray-700 leading-relaxed;
-  max-width: 70ch;
   font-size: 1.0625rem;
+}
+
+/* Full-width paragraphs for destination/trip descriptions */
+.full-width-text p {
+  max-width: none;
 }
 
 /* Prose styling for content areas */

@@ -67,8 +67,8 @@ export default function BhutanPage() {
       </section>
 
       {/* Description */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <div className="prose prose-lg max-w-none">
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <div className="full-width-text text-lg text-gray-700 space-y-4">
           <p>
             With its beauty and mystery, Bhutan presents travelers with
             experiences found nowhere else on Earth. Their celebrations awaken

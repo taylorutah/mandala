@@ -69,8 +69,8 @@ export default function EverestPage() {
       </section>
 
       {/* Description */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <div className="prose prose-lg max-w-none">
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <div className="full-width-text text-lg text-gray-700 space-y-4">
           <p>
             To behold Mt. Everest is to stand within the circumference of a
             great gravity, and join in a tradition of adventure that has drawn

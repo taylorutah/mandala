@@ -45,8 +45,8 @@ export default function NepalPage() {
       </section>
 
       {/* Description */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <div className="prose prose-lg max-w-none">
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <div className="full-width-text text-lg text-gray-700 space-y-4">
           <p>
             Nepal is the ultimate destination for those craving the solitude of
             high mountains, the beauty of windswept plains and the experience of

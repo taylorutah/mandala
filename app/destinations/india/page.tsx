@@ -67,8 +67,8 @@ export default function IndiaPage() {
       </section>
 
       {/* Description */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <div className="prose prose-lg max-w-none">
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <div className="full-width-text text-lg text-gray-700 space-y-4">
           <p>
             Sable-eyed women gaze at you from beneath curving folds of crimson
             and gold-embroidered silk. They stand framed within the window of a
