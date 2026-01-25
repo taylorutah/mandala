@@ -18,13 +18,13 @@ export default function EverestCloseUpPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white">
-            <Link href="/destinations/everest" className="text-amber-500 uppercase tracking-widest mb-2 hover:text-orange-300">
+            <Link href="/destinations/everest" className="text-amber-400 uppercase tracking-widest mb-2 hover:text-orange-300 font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               Everest Trekking
             </Link>
-            <h1 className="text-4xl md:text-6xl font-bold mt-2">Everest Close Up</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mt-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">Everest Close Up</h1>
           </div>
         </div>
       </section>

@@ -110,16 +110,26 @@ export default function DestinationsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gray-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Asia Travel Destinations
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            From the mighty peaks of the Himalaya to the ancient temples of
-            Southeast Asia, explore the destinations that have captivated
-            adventurers for centuries.
-          </p>
+      <section className="relative h-[50vh] min-h-[400px]">
+        <Image
+          src="/images/hero-himalaya.jpg"
+          alt="Himalayan mountains"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+              Asia Travel Destinations
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              From the mighty peaks of the Himalaya to the ancient temples of
+              Southeast Asia, explore the destinations that have captivated
+              adventurers for centuries.
+            </p>
+          </div>
         </div>
       </section>
 
