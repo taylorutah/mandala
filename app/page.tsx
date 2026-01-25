@@ -3,221 +3,329 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const featuredTrips = [
+  {
+    title: "Ultimate Everest",
+    destination: "Nepal",
+    image: "/images/everest-destination.jpg",
+    days: "21 days",
+    type: "Trekking",
+    href: "/trips/ultimate-everest",
+  },
+  {
+    title: "Forbidden Kingdom of Mustang",
+    destination: "Nepal",
+    image: "/images/mustang-trek.jpg",
+    days: "17 days",
+    type: "Trekking",
+    href: "/trips/forbidden-kingdom-mustang",
+  },
+  {
+    title: "Heights of Huangshan",
+    destination: "China",
+    image: "/images/huangshan.jpg",
+    days: "11 days",
+    type: "Overland",
+    href: "/trips/heights-of-huangshan",
+  },
+];
+
+const destinations = [
+  { name: "Nepal", image: "/images/nepal-destination.jpg", href: "/destinations/nepal" },
+  { name: "Bhutan", image: "/images/bhutan-destination.jpg", href: "/destinations/bhutan" },
+  { name: "India", image: "/images/india-destination.jpg", href: "/destinations/india" },
+  { name: "Tibet", image: "/images/tibet-destination.jpg", href: "/destinations/tibet" },
+  { name: "Cambodia", image: "/images/angkor-wat.jpg", href: "/destinations/cambodia" },
+  { name: "China", image: "/images/china-destination.jpg", href: "/destinations/china" },
+];
+
 export default function HomePage() {
   return (
-    <div className="bg-white text-gray-800 overflow-x-hidden">
+    <div className="bg-white text-gray-800">
       {/* === HERO SECTION === */}
-      <section className="relative w-full h-[90vh] md:h-[95vh] overflow-hidden">
+      <section className="relative w-full h-[85vh] min-h-[600px]">
         <Image
-          src="/images/nepal.jpg"
-          alt="Boudhanath Stupa prayer flags, Kathmandu Nepal"
+          src="/images/hero-himalaya.jpg"
+          alt="Himalayan Mountains Adventure"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <p className="text-white/90 text-lg md:text-xl tracking-widest uppercase mb-5">
-            dive deep into cultures · tread along untouched terrains
-          </p>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-lg">
-            <span className="text-white bg-white/20 backdrop-blur-sm px-4 py-2 rounded">
-              we are
-            </span>{" "}
-            <span className="text-orange-500">Adventure</span>
-          </h1>
-        </div>
-      </section>
-
-      {/* === ADVENTURE AWAITS === */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-6 py-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-serif text-center mb-10 text-gray-900">
-          Adventure Awaits
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="space-y-5">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-              Fly Fishing Mongolia
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Mongolia is one of the world’s most spectacular fly-fishing
-              destinations. This country should be on every angler’s bucket
-              list. But be warned — if you visit Mongolia once, you’ll want to
-              come back again and again.
-            </p>
-            <h4 className="text-xl md:text-2xl font-extrabold uppercase text-gray-900">
-              One Outfitter. Two Rivers. Four Adventures.
-            </h4>
-            <p className="text-gray-700 leading-relaxed">
-              Mandala Adventures guides four unique trips on two special
-              Mongolian rivers. Most fishing is from drift boats with guests
-              floating each day between pre-established camps. The more
-              adventurous “Headwaters Expedition” uses camels to pack into a
-              remote wilderness area. All adventures include exceptional staff,
-              camps, and gear.
-            </p>
-          </div>
-
-          <div className="relative w-full h-[380px] rounded-xl overflow-hidden shadow-md">
-            <Image
-              src="/images/fishing-mongolia.jpg"
-              alt="Fly fishing in Mongolia"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-        </div>
-      </motion.section>
-
-      {/* === EVEREST LOOMS ABOVE === */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="bg-gray-50 py-16"
-      >
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-5 text-gray-900">
-            Everest Looms Above
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-8 max-w-3xl">
-            Trek to Everest Base Camp (17,389′) via the historic route taken by
-            Edmund Hillary and Tenzing Norgay in 1953. We’ll pause along the way
-            in Sherpa villages, teahouses, markets, and Buddhist monasteries.
-            The trek culminates at Kala Pattar (18,200′) for breathtaking views.
-          </p>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5 mb-8">
-            {[
-              "Mt. Everest Views",
-              "Sherpa Village Life",
-              "Visit Monasteries",
-              "Life in Kathmandu",
-            ].map((item) => (
-              <div
-                key={item}
-                className="bg-white border border-gray-200 rounded-lg p-4 text-center shadow-sm hover:shadow-md transition"
-              >
-                <p className="font-medium text-gray-800">{item}</p>
-              </div>
-            ))}
-          </div>
-
-          <Link
-            href="#"
-            className="inline-block bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-orange-600 transition"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            Learn More
-          </Link>
-        </div>
-      </motion.section>
-
-      {/* === WHY MANDALA ADVENTURES === */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-10 text-gray-900">
-            Why Mandala Adventures?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Why Mandala Adventures?",
-                image: "/images/signpost.jpg",
-                text: "We create our unique trips with our partners in Asia and together tend to all details.",
-              },
-              {
-                title: "Travel Without Limits",
-                image: "/images/cliff-view.jpg",
-                text: "Explore our website, scrutinize our itineraries, contact our past guests — and then give us a call.",
-              },
-              {
-                title: "Adventure Awaits",
-                image: "/images/beach-boat.jpg",
-                text: "Asia is a destination full of exciting adventures — the countries are many and the activities endless.",
-              },
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition p-6 flex flex-col"
+            <p className="text-white/90 text-sm md:text-base tracking-[0.3em] uppercase mb-6">
+              Journey into the Heart of Asia
+            </p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Extraordinary Adventures<br />
+              <span className="text-amber-500">Unforgettable Journeys</span>
+            </h1>
+            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+              Small group treks and cultural expeditions through Nepal, Bhutan, Tibet, India, and Southeast Asia.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/trips"
+                className="bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-800 transition-all shadow-lg hover:shadow-xl"
               >
-                <h3 className="text-lg font-semibold mb-3">{card.title}</h3>
-                <div className="relative h-44 w-full mb-4">
+                Explore Our Trips
+              </Link>
+              <Link
+                href="/destinations"
+                className="bg-white/10 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all"
+              >
+                View Destinations
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* === INTRODUCTION === */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+              Welcome to Mandala Adventures
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+              An unforgettable journey back in time beckons in the realm of Mandala Adventures
+              as we guide you into the ageless Himalaya. We are a unique travel service and
+              outfitter of treks and overland journeys that immerse you in ancient cultures,
+              breathtaking landscapes, and authentic experiences far from the ordinary tourist path.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* === FEATURED TRIPS === */}
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Adventures</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Discover our most popular expeditions, from iconic Everest treks to remote cultural journeys.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {featuredTrips.map((trip, index) => (
+              <motion.div
+                key={trip.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Link href={trip.href} className="group block">
+                  <div className="relative h-72 rounded-xl overflow-hidden mb-4">
+                    <Image
+                      src={trip.image}
+                      alt={trip.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-amber-500 text-sm font-medium mb-1">{trip.destination}</p>
+                      <h3 className="text-white text-xl font-semibold">{trip.title}</h3>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <span className="flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      {trip.days}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      </svg>
+                      {trip.type}
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/trips"
+              className="inline-flex items-center gap-2 text-orange-700 font-semibold hover:text-orange-800 transition-colors"
+            >
+              View All Trips
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* === DESTINATIONS === */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore Our Destinations</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              From the peaks of the Himalaya to the temples of Southeast Asia, discover where your next adventure awaits.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {destinations.map((dest, index) => (
+              <motion.div
+                key={dest.name}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true }}
+              >
+                <Link href={dest.href} className="group block relative h-48 md:h-64 rounded-xl overflow-hidden">
                   <Image
-                    src={card.image}
-                    alt={card.title}
+                    src={dest.image}
+                    alt={dest.name}
                     fill
-                    className="object-cover rounded-lg block"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                </div>
-                <p className="text-gray-600 flex-grow">{card.text}</p>
-                <a
-                  href="#"
-                  className="mt-5 inline-flex items-center text-orange-600 font-semibold hover:text-orange-700 transition"
-                >
-                  Learn More →
-                </a>
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <h3 className="text-white text-xl md:text-2xl font-semibold">{dest.name}</h3>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/destinations"
+              className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+            >
+              View All Destinations
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* === WHY MANDALA === */}
+      <section className="bg-gray-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Why Travel With Mandala Adventures?
+              </h2>
+              <p className="text-gray-300 mb-8 text-lg">
+                For over two decades, we've been crafting extraordinary journeys into the heart of Asia.
+                Our intimate knowledge of the region, combined with deep local partnerships, ensures
+                experiences that go far beyond ordinary tourism.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Small groups (2-15 travelers) for intimate experiences",
+                  "Expert local guides with deep cultural knowledge",
+                  "Carefully curated itineraries with authentic encounters",
+                  "Responsible travel that benefits local communities",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-200">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 mt-8 text-amber-500 font-semibold hover:text-orange-300 transition-colors"
+              >
+                Learn More About Us
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+            <div className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden">
+              <Image
+                src="/images/prayer-flags.jpg"
+                alt="Buddhist prayer flags in the Himalaya"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === CTA === */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Begin Your Adventure?
+          </h2>
+          <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+            Whether you're dreaming of trekking to Everest Base Camp, exploring ancient temples,
+            or immersing yourself in Himalayan culture, we're here to help plan your perfect journey.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-800 transition-all shadow-lg hover:shadow-xl"
+            >
+              Contact Us Today
+            </Link>
+            <Link
+              href="/essentials/faq"
+              className="bg-gray-100 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-all"
+            >
+              Read FAQs
+            </Link>
+          </div>
+          <p className="mt-6 text-gray-500 mx-auto">
+            Or call us at <a href="tel:+18018231551" className="text-orange-700 font-semibold hover:underline">(801) 823-1551</a>
+          </p>
+        </div>
+      </section>
+
+      {/* === PARTNER LOGOS === */}
+      <section className="border-t border-gray-200 py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-center text-sm text-gray-500 uppercase tracking-wider mb-8">
+            Trusted by Leading Travel Organizations
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-8">
+            {[
+              { src: "/images/expeditions.png", alt: "National Geographic Expeditions" },
+              { src: "/images/times-logo-new.png", alt: "The New York Times Journeys" },
+              { src: "/images/JourneysLogo_Yellow-2.png", alt: "Smithsonian Journeys" },
+            ].map((logo, i) => (
+              <div key={i} className="partner-logo-image">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={180}
+                  height={56}
+                  className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                />
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* === PARTNER LOGOS (fixed + refined) === */}
-<motion.section
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
-  className="w-full bg-white border-t border-gray-100 py-16"
->
-  <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-wrap justify-center items-center gap-x-20 gap-y-12">
-    {[
-      {
-        src: "/images/expeditions.png",
-        alt: "National Geographic Expeditions",
-        width: 208,
-        height: 64,
-      },
-      {
-        src: "/images/times-logo-new.png",
-        alt: "The New York Times Journeys",
-        width: 208,
-        height: 64,
-      },
-      {
-        src: "/images/JourneysLogo_Yellow-2.png",
-        alt: "Smithsonian Journeys",
-        width: 208,
-        height: 64,
-      },
-    ].map((logo, i) => (
-      <div
-        key={i}
-        className="flex justify-center items-center min-w-[200px] max-w-[208px] p-3 partner-logo-image"
-        style={{ backgroundColor: "#ffffff", color: "#ffffff" }}
-      >
-        <Image
-          src={logo.src}
-          alt={logo.alt}
-          width={logo.width}
-          height={logo.height}
-          className="object-contain select-none"
-        />
-      </div>
-    ))}
-  </div>
-</motion.section>
     </div>
   );
 }

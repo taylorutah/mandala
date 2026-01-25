@@ -11,6 +11,13 @@ const config = {
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
       },
+      colors: {
+        brand: {
+          DEFAULT: "#c2410c", // orange-700 - more subtle/professional
+          hover: "#9a3412",   // orange-800 - darker on hover
+          light: "#ea580c",   // orange-600 - for accents
+        },
+      },
     },
   },
   plugins: [],

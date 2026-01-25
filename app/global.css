@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* --------------------------------------------------------------
+   CSS CUSTOM PROPERTIES
+-------------------------------------------------------------- */
+:root {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', var(--font-geist-sans), system-ui, sans-serif;
+  --color-primary: #c2410c;
+  --color-primary-dark: #9a3412;
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
+}
 
 /* --------------------------------------------------------------
    GLOBAL BASE
@@ -8,8 +22,7 @@
 html,
 body {
   @apply bg-white text-gray-800 antialiased;
-  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: var(--font-body);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -25,11 +38,13 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-heading);
   @apply text-gray-900 font-semibold tracking-tight;
+  line-height: 1.2;
 }
 
 h1 {
-  @apply text-4xl md:text-6xl font-extrabold;
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold;
 }
 
 h2 {
@@ -37,90 +52,137 @@ h2 {
 }
 
 h3 {
-  @apply text-2xl md:text-3xl font-semibold;
+  @apply text-xl md:text-2xl font-semibold;
 }
 
 p {
   @apply text-gray-700 leading-relaxed;
   max-width: 70ch;
+  font-size: 1.0625rem;
+}
+
+/* Prose styling for content areas */
+.prose h2 {
+  @apply mt-10 mb-4;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply mb-6;
 }
 
 /* --------------------------------------------------------------
    LINKS & BUTTONS
 -------------------------------------------------------------- */
 a {
-  @apply text-orange-600 hover:text-orange-700 transition-colors duration-200;
+  @apply text-orange-700 hover:text-orange-800 transition-colors duration-200;
   text-decoration: none;
 }
 
-button {
-  @apply bg-orange-500 text-white px-6 py-3 rounded-lg font-medium shadow-md;
-  transition: background-color 0.2s ease;
+button,
+.btn {
+  @apply bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold shadow-sm;
+  transition: all 0.2s ease;
 }
 
 button:hover,
-a.button:hover {
-  @apply bg-orange-600;
+.btn:hover {
+  @apply bg-orange-800 shadow-md;
+}
+
+.btn-secondary {
+  @apply bg-white text-gray-900 border border-gray-200;
+}
+
+.btn-secondary:hover {
+  @apply bg-gray-50;
 }
 
 /* --------------------------------------------------------------
    SECTION STRUCTURE
 -------------------------------------------------------------- */
 section {
-  @apply py-16 md:py-20 transition-all duration-700 ease-in-out;
+  @apply py-12 md:py-16 transition-all duration-500;
 }
 
-section:nth-of-type(even) {
-  @apply bg-gray-50;
-}
+/* Remove alternating background - too busy */
+/* section:nth-of-type(even) { @apply bg-gray-50; } */
 
 /* --------------------------------------------------------------
    IMAGES
 -------------------------------------------------------------- */
-/* General images */
 img {
-  @apply rounded-lg shadow-sm;
+  @apply rounded-lg;
   object-fit: cover;
 }
 
-/* Transparent PNG fix for logos/partner-images */
+/* Remove shadow from images in hero sections */
+section.relative img {
+  @apply rounded-none shadow-none;
+}
+
+/* Transparent PNG fix for logos */
 .logo-image,
 .partner-logo-image {
   line-height: 0 !important;
-  color: #ffffff !important;
-  filter: brightness(1) contrast(1) !important; /* Forces Safari to re-rasterize */
+  filter: brightness(1) contrast(1) !important;
+}
+
+/* --------------------------------------------------------------
+   CARDS
+-------------------------------------------------------------- */
+.card {
+  @apply bg-white rounded-xl border border-gray-100 shadow-sm;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  @apply shadow-lg border-amber-100;
+  transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------
    SCROLLBAR
 -------------------------------------------------------------- */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 9999px;
+  background: #c5c5c5;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 /* --------------------------------------------------------------
    SELECTION HIGHLIGHT
 -------------------------------------------------------------- */
 ::selection {
-  background-color: #a7f3d0;
-  color: #065f46;
+  background-color: #fed7aa;
+  color: #9a3412;
 }
 
 /* --------------------------------------------------------------
    SMOOTH FADE ANIMATION
 -------------------------------------------------------------- */
 main {
-  animation: fadeIn 0.6s ease both;
+  animation: fadeIn 0.5s ease both;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -140,10 +202,15 @@ main {
 }
 
 /* --------------------------------------------------------------
-   HEADER / NAVIGATION POLISH
+   HEADER / NAVIGATION
 -------------------------------------------------------------- */
 header {
-  @apply fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50;
+  @apply fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+header.scrolled {
+  @apply shadow-md;
 }
 
 nav {
@@ -151,16 +218,146 @@ nav {
 }
 
 nav a {
-  @apply text-gray-800 font-medium mx-3 hover:text-orange-600 transition-colors;
+  @apply text-gray-700 font-medium hover:text-orange-700 transition-colors;
+  font-family: var(--font-body);
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  @apply absolute top-full left-0 bg-white rounded-lg shadow-xl border border-gray-100;
+  min-width: 220px;
+  transform: translateY(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --------------------------------------------------------------
+   HERO SECTIONS
+-------------------------------------------------------------- */
+.hero {
+  @apply relative min-h-[60vh] flex items-center justify-center;
+}
+
+.hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50;
+}
+
+.hero-content {
+  @apply relative z-10 text-center text-white px-6;
+}
+
+/* --------------------------------------------------------------
+   TRIP CARDS
+-------------------------------------------------------------- */
+.trip-card {
+  @apply overflow-hidden rounded-xl bg-white border border-gray-100;
+  transition: all 0.3s ease;
+}
+
+.trip-card:hover {
+  @apply shadow-xl border-transparent;
+  transform: translateY(-4px);
+}
+
+.trip-card img {
+  transition: transform 0.4s ease;
+}
+
+.trip-card:hover img {
+  transform: scale(1.05);
 }
 
 /* --------------------------------------------------------------
    FOOTER
 -------------------------------------------------------------- */
 footer {
-  @apply border-t border-gray-200 mt-20 py-10 text-center text-sm text-gray-600 bg-white;
+  @apply border-t border-gray-200 py-12 bg-gray-900 text-gray-300;
+}
+
+footer h3,
+footer h4 {
+  @apply text-white font-semibold mb-4;
+  font-family: var(--font-body);
+}
+
+footer a {
+  @apply text-gray-400 hover:text-white transition-colors;
 }
 
 footer p {
-  @apply mb-1;
+  @apply text-gray-400 text-sm;
 }
+
+/* --------------------------------------------------------------
+   FORM ELEMENTS
+-------------------------------------------------------------- */
+input,
+textarea,
+select {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply outline-none ring-2 ring-orange-700 border-transparent;
+}
+
+label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+/* --------------------------------------------------------------
+   RESPONSIVE ADJUSTMENTS
+-------------------------------------------------------------- */
+@media (max-width: 768px) {
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  section {
+    @apply py-10;
+  }
+}
+
+/* --------------------------------------------------------------
+   ANIMATION CLASSES
+-------------------------------------------------------------- */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animations for lists */
+.stagger-children > * {
+  animation: fadeInUp 0.5s ease both;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }

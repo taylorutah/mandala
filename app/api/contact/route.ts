@@ -62,8 +62,8 @@ export async function POST(req: NextRequest) {
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        from: 'NAPCO Contact <no-reply@resend.dev>',
-        to: 'taylor@napcopumps.com',
+        from: 'Mandala Adventures <no-reply@resend.dev>',
+        to: 'info@mandalaadventures.com',
         reply_to: email,
         subject: `Lead: ${fullName}`,
         html,
