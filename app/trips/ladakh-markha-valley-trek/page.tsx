@@ -12,10 +12,10 @@ export default function MarkhaValleyPage() {
       <section className="relative h-[50vh] min-h-[400px]">
         <Image src="/images/markha-valley.jpg" alt="Markha Valley" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <div className="text-center text-white max-w-4xl">
             <Link href="/destinations/india" className="text-amber-400 uppercase tracking-widest mb-2 hover:text-orange-300 font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">India</Link>
-            <h1 className="text-4xl md:text-6xl font-bold mt-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">Ladakh's Markha Valley Trek</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">Ladakh's Markha Valley Trek</h1>
           </div>
         </div>
       </section>
