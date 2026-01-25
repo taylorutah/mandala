@@ -68,7 +68,7 @@ export default function Header() {
           >
             <Link
               href="/destinations"
-              className="hover:text-orange-800 transition-colors duration-200 flex items-center gap-1"
+              className="hover:text-orange-800 transition-colors duration-200 flex items-center gap-1 py-2"
             >
               Destinations
               <svg
@@ -89,23 +89,25 @@ export default function Header() {
             </Link>
 
             {isDestinationsOpen && (
-              <div className="absolute top-full left-0 mt-1 w-52 bg-white border border-gray-200 rounded-lg shadow-lg py-2">
-                {destinations.map((dest) => (
-                  <Link
-                    key={dest.href}
-                    href={dest.href}
-                    className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
-                  >
-                    {dest.name}
-                  </Link>
-                ))}
-                <div className="border-t border-gray-100 mt-2 pt-2">
-                  <Link
-                    href="/destinations"
-                    className="block px-4 py-2 text-orange-700 font-medium hover:bg-orange-50"
-                  >
-                    View All →
-                  </Link>
+              <div className="absolute top-full left-0 pt-2 w-52">
+                <div className="bg-white border border-gray-200 rounded-lg shadow-lg py-2">
+                  {destinations.map((dest) => (
+                    <Link
+                      key={dest.href}
+                      href={dest.href}
+                      className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
+                    >
+                      {dest.name}
+                    </Link>
+                  ))}
+                  <div className="border-t border-gray-100 mt-2 pt-2">
+                    <Link
+                      href="/destinations"
+                      className="block px-4 py-2 text-orange-700 font-medium hover:bg-orange-50"
+                    >
+                      View All →
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}
@@ -119,7 +121,7 @@ export default function Header() {
           >
             <Link
               href="/essentials"
-              className="hover:text-orange-800 transition-colors duration-200 flex items-center gap-1"
+              className="hover:text-orange-800 transition-colors duration-200 flex items-center gap-1 py-2"
             >
               Essentials
               <svg
@@ -140,23 +142,25 @@ export default function Header() {
             </Link>
 
             {isEssentialsOpen && (
-              <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-gray-200 rounded-lg shadow-lg py-2">
-                {essentials.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="border-t border-gray-100 mt-2 pt-2">
-                  <Link
-                    href="/essentials"
-                    className="block px-4 py-2 text-orange-700 font-medium hover:bg-orange-50"
-                  >
-                    View All →
-                  </Link>
+              <div className="absolute top-full left-0 pt-2 w-56">
+                <div className="bg-white border border-gray-200 rounded-lg shadow-lg py-2">
+                  {essentials.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-800 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="border-t border-gray-100 mt-2 pt-2">
+                    <Link
+                      href="/essentials"
+                      className="block px-4 py-2 text-orange-700 font-medium hover:bg-orange-50"
+                    >
+                      View All →
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}
