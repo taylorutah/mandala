@@ -253,6 +253,17 @@ nav a {
   @apply relative z-10 text-center text-white px-6;
 }
 
+/* Hero text must override the global heading styles */
+.hero-heading {
+  color: white !important;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.hero-tagline {
+  color: #fbbf24 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
 /* --------------------------------------------------------------
    TRIP CARDS
 -------------------------------------------------------------- */
