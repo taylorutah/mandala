@@ -82,17 +82,22 @@ p {
    LINKS & BUTTONS
 -------------------------------------------------------------- */
 a {
-  @apply text-orange-700 hover:text-orange-800 transition-colors duration-200;
+  @apply transition-colors duration-200;
   text-decoration: none;
 }
 
-button,
+/* Orange link color only inside main content, not header/drawer */
+main a,
+footer a,
+.prose a {
+  @apply text-orange-700 hover:text-orange-800;
+}
+
 .btn {
   @apply bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold shadow-sm;
   transition: all 0.2s ease;
 }
 
-button:hover,
 .btn:hover {
   @apply bg-orange-800 shadow-md;
 }
@@ -208,18 +213,13 @@ main {
 /* --------------------------------------------------------------
    HEADER / NAVIGATION
 -------------------------------------------------------------- */
-header {
-  @apply fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
+/* Header positioning controlled by Header.tsx (sticky) — no global override */
 
 header.scrolled {
   @apply shadow-md;
 }
 
-nav {
-  @apply flex justify-between items-center max-w-7xl mx-auto px-6 py-4;
-}
+/* Nav layout controlled by component classes — no global override */
 
 nav a {
   @apply text-gray-700 font-medium hover:text-orange-700 transition-colors;
