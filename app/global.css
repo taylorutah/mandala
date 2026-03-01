@@ -221,8 +221,9 @@ header.scrolled {
 
 /* Nav layout controlled by component classes — no global override */
 
+/* Nav link base — hover colors controlled per-component */
 nav a {
-  @apply text-gray-700 font-medium hover:text-orange-700 transition-colors;
+  @apply text-gray-700 font-medium transition-colors;
   font-family: var(--font-body);
 }
 
