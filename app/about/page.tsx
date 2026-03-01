@@ -23,11 +23,6 @@ const team = [
     bio: "Cindy has lived in and absorbed languages, cultures, sights and sounds throughout the world. She is fluent in Indonesian, Mandarin and Fukian.",
   },
   {
-    name: "Jason Belzer",
-    role: "Expedition Consultant",
-    bio: "Coming from a family of travelers and outdoorsmen, Jason was bound to make a living in the travel industry. He is a mountain guide by trade and has led groups on adventures to Mexico, South America, Europe, and the red rock deserts of Southern Utah.",
-  },
-  {
     name: "Glen Cabal",
     role: "Expedition Consultant",
     bio: "After receiving his M.B.A. from the American Graduate School of International Management in Arizona where he also studied Japanese, he moved to San Francisco, working in the International Shipping arena and relishing the diverse cultural influences of the city by the bay.",
