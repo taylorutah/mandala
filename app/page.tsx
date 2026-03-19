@@ -21,12 +21,12 @@ const featuredTrips = [
     href: "/trips/forbidden-kingdom-mustang",
   },
   {
-    title: "Heights of Huangshan",
-    destination: "China",
-    image: "/images/huangshan.jpg",
-    days: "11 days",
-    type: "Overland",
-    href: "/trips/heights-of-huangshan",
+    title: "Mongolia River Camp",
+    destination: "Mongolia",
+    image: "/images/mongolia-river-camp.jpg",
+    days: "10 days",
+    type: "Fishing",
+    href: "/trips/mongolia-river-camp",
   },
 ];
 

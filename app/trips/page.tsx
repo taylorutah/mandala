@@ -133,6 +133,19 @@ const trips = [
     description:
       "Highlights Cambodia's best-known sites beginning in the charming colonial capital and the temples of Angkor.",
   },
+  // Mongolia
+  {
+    slug: "mongolia-river-camp",
+    title: "Mongolia River Camp",
+    destination: "Mongolia",
+    image: "/images/mongolia-river-camp.jpg",
+    length: "10 days",
+    cost: "$7,950",
+    type: "Fishing",
+    rating: "Moderate",
+    description:
+      "Float pristine Mongolian rivers in pursuit of taimen — the world's largest river trout — through landscapes unchanged since the age of Chinggis Khaan.",
+  },
   // China
   {
     slug: "heights-of-huangshan",
@@ -187,6 +200,9 @@ export default function TripsPage() {
             </span>
             <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 cursor-pointer">
               Overland
+            </span>
+            <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 cursor-pointer">
+              Fishing
             </span>
           </div>
         </div>
